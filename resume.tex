@@ -1,0 +1,138 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{marvosym}
+\usepackage{fix-cm}
+
+% font loading
+\usepackage{fontspec}	
+%\usepackage[scaled=1.03]{inconsolata}
+
+% other packages for XeTeX
+\usepackage{xunicode,xltxtra}
+
+% custom \section
+\usepackage{titlesec}
+
+\raggedright
+\pagestyle{empty}
+
+% Fonts
+\defaultfontfeatures{Mapping=tex-text}
+\setmonofont[Scale=1]{Inconsolata}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+
+% Tweak section
+% \titleformat{<command>}[<shape>]{<format>}                  {<label>}{<sep>}{<before>}{<after>}
+\titleformat  {\section}          {\large\scshape\raggedright}{}       {0em}  {}        [\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+
+% Command Definitions
+\newcommand{\employer}[4]
+	{{ \begin{tabular}{l@{\hspace{5mm}}|p{30mm}}
+	   \multicolumn{1}{l}{\textbf{#1 $\circ$ }#2}&\multicolumn{1}{p{30mm}}{\hspace{-3mm}\textsc{#3}} \\
+	   \parbox{.825\textwidth}{#4 \vspace*{-4pt}}
+	   \end{tabular} \vspace{4pt} }}
+
+\newcommand{\contact}[4]
+	{\begin{center}
+		{\LARGE \scshape{#1}}\\
+		#2\\
+		\Telefon \hspace{0.5ex} #3 \hspace{1em} \Letter \hspace{0.5ex} #4
+	\end{center}
+	\vspace*{-8pt}}
+
+\newenvironment{achievements}           % ↓ was 2pt
+	{\begin{list}{$\cdot$}{\topsep 0pt \itemsep 4pt \parsep 0pt \leftmargin 1em}
+	 \linespread{1.05} \selectfont % for spreading out all lines
+	}
+	{\end{list}\vspace*{4pt}}
+
+\newenvironment{courses}
+	{\begin{list}{}{\topsep 0pt \itemsep 0pt}}
+	{\vspace*{4pt}\end{list}}
+
+\newcommand{\course}[2]
+	{\item \textbf{#1}: #2}
+
+\newcommand{\schoolwithcourses}[5]
+	{\textbf{#1} $\circ$ #2 $\circ$ #3 $\circ$ #4 \\ \begin{achievements}\item{Selected Coursework:\\#5}\end{achievements}}
+
+\newcommand{\school}[4]
+	{\textbf{#1} #2 $\circ$ #3 $\circ$ #4\\ \vspace*{5pt}}
+ 
+\def\Cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+\def\kt{\vspace*{2pt}\\\textsc{Technologies:\,}}
+
+\begin{document}
+
+\contact{Matthew Ball}
+{376 Wickenden Street, Providence RI 02903}
+{215.518.0870}
+{mattjball@gmail.com}
+
+% Experience
+\section{Experience}
+\employer{Lapis Software}{Software Developer}{2009 - Present}{
+	\begin{achievements}
+	
+	\item{Built a demo Retailer Information Web Portal for a Pennsylvania Lottery project proposal. \kt Java EE 6, GlassFish 3, SQL Server, JSF 2, EclipseLink, PrimeFaces, HTML5.}
+	
+	\item{Created an intranet web application for back office state lottery operations. This replaced an aging Windows Forms desktop application as the lottery management system used by Scientific Games (\texttt{www.scigames.com}). Delivered to Indiana and Connecticut state lotteries in 2010; will be deployed to Pennsylvania and Iowa lotteries in 2011. \kt Java EE 5, JBoss 5, SQL Server, JSP/servlets, EJB, JPA, Hibernate, Guava, Ehcache, XStream, XHTML, CSS3, jQuery, YUI.}
+	
+	\item{Designed and implemented an executive-centric dashboard for the Colorado State Lottery. This web application bridged an information gap between Lottery management and operations staff. \kt Java EE 5, JBoss 5, DB2, JSP/servlets, JPA, Hibernate, XStream, XHTML, CSS3, jQuery, Google Maps and Visualization APIs, Balsamiq Mockups.}
+	
+	\item{Implemented a bet slip PDF generator and printer calibration utility for \texttt{www.nygroupplay.com}, delivered as an ASP.NET custom control to Walker Digital, LLC. This enabled Group Play members to fill out and print bet slips on their home printers rather than at lottery retailer locations. \kt C\#, IIS 7, ASP.NET 3.5, QuickPDF.}
+	
+	\end{achievements}
+}
+
+\employer{Lapis Software}{Software Development Intern}{Summer 2008}{
+	\begin{achievements}
+	
+	\item{Developed and bugfixed Version 1 of the Smart Measurement System, a health survey system at \texttt{www.amihealthy.com}. Built a CMS-like administrator area for managing users and survey groups, and defining flexible, dynamic health surveys. Improved security and cross-browser compatibility. \kt Java EE 5, JBoss 4, MySQL, JSP/servlets, EJB, Hibernate.}
+	
+	\end{achievements}
+}
+
+\employer{Undergraduate Thesis Research}{Development of a Web-Based Water Wave Viewer}{2008-2009}{
+	\begin{achievements}
+	
+	\item{Worked with Mathematics professors to create a prototype web application for visualizing and exploring large data sets. Ported \Cpp\, command-line client to Python using Python wrappers. Designed and implemented a web viewer to browse and display existing results. \kt Python, NumPy, Trilinos, SWIG, gnuplot, XML, HTML, CSS2, jQuery, Flot.}
+	
+	\end{achievements}
+}
+
+% Education
+\section{Education}
+
+\schoolwithcourses{Sc.B. Physics with Honors}{Brown University}{Providence, RI}{Class of 2009}{
+\begin{courses}
+	\course{Computer Science}{Models of Computation $\cdot$ Computer Systems $\cdot$ Software Engineering $\cdot$ Networking}
+	\course{Physics}{Classical Mechanics $\cdot$ Quantum Mechanics $\cdot$ Electrodynamics $\cdot$ Thermodynamics $\cdot$ Cosmology}
+	\course{Mathematics}{Multivariable Calculus $\cdot$ Linear Algebra $\cdot$ Cryptography $\cdot$ Probability $\cdot$ ODEs \& PDEs}
+\end{courses}}
+
+\school{Abington Friends School}{Abington, PA}{GPA: 4.0}{Class of 2005}
+
+\section{Additional Projects}
+
+\employer{Brown University Physics Department}{Summer Researcher, High Energy Theory Group}{Summer 2007}{
+	\begin{achievements}
+	
+	\item Participated in search for subatomic particles predicted by technicolor physics models. Evaluated and tested Open MPI for comparing Monte Carlo methods. Developed a series of Unix programs to expedite configuration and execution of large simulations. Created templates for manipulating results in ROOT, a data analysis library developed by CERN. \kt \Cpp, Bash, Open MPI, ROOT.
+	
+	\end{achievements}
+}
+
+\employer{Brown Opera Productions}{Board Member}{2005 - 2009}{
+	\begin{achievements}
+	
+	\item Board member of and webmaster for BOP, a student theatre group founded in 2005. Served as technical director for BOP's first four full-length operatic productions. Rebuilt outdated website as a Wordpress site with a custom theme, image gallery, spam resistance, and ticket reservation system.
+	
+	\end{achievements}
+}
+
+\end{document}
