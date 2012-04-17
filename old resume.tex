@@ -1,0 +1,111 @@
+\documentclass[10pt]{article}
+\usepackage[margin=.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fix-cm}
+\raggedright
+\pagestyle{empty}
+
+%  \renewcommand{\encodingdefault}{cg}
+  %\renewcommand{\rmdefault}{lgrcmr}
+
+% DEFINITIONS FOR RESUME
+\newcommand{\area}[2]{\vspace*{-9pt} \begin{verse}\textbf{#1}: #2 \end{verse}  }
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
+\newcommand{\header}[1]{{\hspace*{-15pt}\vspace*{6pt} \textsc{#1}} \vspace*{-6pt} \lineunder}
+\newcommand{\employer}[4]{{ \textbf{#1 $\circ$ }#2 \hspace{\stretch{1}} #3 \\  \parbox{.85\textwidth}{#4}}}
+\newcommand{\contact}[3]{
+\begin{center}
+{\LARGE \scshape {#1}}\\
+#2 \lineunder 
+#3
+\end{center}
+\vspace*{-8pt}
+}
+\newenvironment{achievements}{\begin{list}{$\cdot$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}\end{list}}
+\newcommand{\schoolwithcourses}[4]{
+ \textbf{#1} #2 $\circ$ #3 $\circ$ #4 \\ 
+Selected Coursework:\\
+\vspace*{5pt}
+}
+\newcommand{\school}[3]{
+ \textbf{#1} #2 $\circ$ #3\\
+\vspace*{5pt}
+}
+% END RESUME DEFINITIONS
+
+\begin{document}
+
+\contact{Matt Ball}
+{376 Wickenden Street, Providence RI 02903}
+{(215) 518-0870 $\circ$ mattjball@gmail}
+
+\header{Education}
+
+\schoolwithcourses{Brown University}{Providence, RI}{Physics Concentrator}{Projected Graduation: May 2009}
+	\area{Computer Science}{Models of Computation $\cdot$ Computer Systems $\cdot$ Software Engineering $\cdot$ Networking}
+	\area{Physics}{Classical Mechanics $\cdot$ Quantum Mechanics $\cdot$ Electrodynamics $\cdot$ Thermodynamics $\cdot$ Cosmology}
+	\area{Mathematics}{Multivariable Calculus $\cdot$ Linear Algebra $\cdot$ Cryptography $\cdot$ Probability $\cdot$ ODEs \& PDEs}
+
+\school{Abington Friends School}{Abington, PA}{Class of 2005}
+	\area{Cumulative GPA}{4.0/4.0}
+	\area{Honors}{National Cum Laude Society $\cdot$ Advanced Placement Scholar with Honor $\cdot$ Award for Outstanding Research in Human Health $\cdot$ First Place, Montgomery County Science Research Competition}
+
+\header{Relevant Experience}
+\employer{Lapis Software Associates}{Software Development Intern}{Summer 2008}{
+	\begin{achievements}
+	\item Developed front-end and back-end code for a web-based public health survey system.
+	\item Created dynamically generated servlet-based web pages for administrator and user interaction.
+	\item Implemented web server software in Java, which interacted with JSP and MySQL.
+	\end{achievements}
+}
+
+\employer{Centocor, Inc.}{Summer Intern}{Summer 2006}{
+	\begin{achievements}
+	\item Interned with the Direct Product Capture Business Unit.
+	\item Executed daily batch record reviews as part of QA and Good Manufacturing Practice.
+	\item Developed a complete process map as part of a long-term project to simplify data flow.
+	\item Analyzed equipment usage data to determine efficiency and forecast future needs.
+	\end{achievements}
+}
+
+\header{Skills \& Interests}
+
+\begin{achievements}
+\item Proficiency in software development in Java, Python, JavaScript, C.
+\item Familiarity with standard productivity and creative software, primarily Office and Adobe Creative Suite.
+\item Proficiency with technical software: Crystal Reports, Mathematica, {\sc Matlab}, Kaleidagraph, Minitab.
+\item Familiarity with UNIX, GNU/Linux, Windows, Macintosh operating systems.
+\item Familiarity with MySQL, JSP, \LaTeX, PHP, Scheme, ML, shell scripting.
+\item Interests: cooking, running, technical theatre, music, squash, skiing, Ultimate Frisbee, computers \& gaming.
+\end{achievements}
+
+\header{Additional Experience}
+
+\employer{Brown Opera Productions}{Board Member and Webmaster}{2005 - 2009}{
+	\begin{achievements}
+	\item Current board member of and webmaster for BOP, a solely student-run theatre group.
+	\item Served as technical director for each of BOP's annual full-length operatic productions while at Brown.
+	\end{achievements}
+}
+
+\employer{Brown University Physics Department}{Summer Researcher}{Summer 2007}{
+	\begin{achievements}
+	\item Assisted Brown professors working in experimental high-energy particle physics.
+	\item Tested and assesed a new job batching system for comparing Monte Carlo methods.
+	\item Developed a series of Unix programs to efficiently configure and execute batch simulations.
+	\item Created templates for manipulating results in ROOT, a data analysis library developed by CERN.
+	\item Searched for particles predicted by technicolor physics models using the above tools.
+	\end{achievements}
+}
+
+\employer{Fox Chase Cancer Center}{Howard Hughes Student Scientist}{2003 - 2004}{
+	\begin{achievements}
+	\item Researched PTEN and the molecular genetics of endometrial cancer (EC).
+	\item Investigated correlations between elevated estrogen levels and incidence rate of EC.
+	\item Tested glycodelin as a possible promoter of the genes \emph{lacz} and PTEN.
+	\item Applied novel recombineering techniques to create a genetically altered mouse model.
+	\end{achievements}
+}
+
+\end{document}
